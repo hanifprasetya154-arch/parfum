@@ -13,13 +13,23 @@
         <div class="logo">
           <h1>Luxe Parfum</h1>
         </div>
+        <button
+          id="mobile-menu-btn"
+          class="mobile-menu"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger"></span>
+        </button>
         <nav class="navbar">
-          <a href="#home" onclick="showSection('home')">Beranda</a>
-          <a href="#products" onclick="showSection('products')">Produk</a>
-          <a href="#history" onclick="showSection('history')">Riwayat</a>
-          <a href="#cart" onclick="showSection('cart')" class="cart-link">
-            Keranjang <span id="cart-count" class="badge">0</span>
-          </a>
+          <div class="navbar-links">
+            <a href="#home" onclick="showSection('home')">Beranda</a>
+            <a href="#products" onclick="showSection('products')">Produk</a>
+            <a href="#history" onclick="showSection('history')">Riwayat</a>
+            <a href="#cart" onclick="showSection('cart')" class="cart-link">
+              Keranjang <span id="cart-count" class="badge">0</span>
+            </a>
+          </div>
         </nav>
       </div>
     </header>

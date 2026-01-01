@@ -706,3 +706,36 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Mobile menu toggle: open/close navbar links on small screens
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  if (!mobileBtn || !navbar) return;
+
+  mobileBtn.addEventListener("click", function () {
+    const expanded = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", String(!expanded));
+    navbar.classList.toggle("open");
+  });
+
+  // Close menu when a nav link is clicked (mobile)
+  navLinks.forEach((a) =>
+    a.addEventListener("click", function () {
+      if (window.innerWidth <= 768) {
+        navbar.classList.remove("open");
+        if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+      }
+    })
+  );
+
+  // Ensure menu is closed when resizing to desktop
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      navbar.classList.remove("open");
+      if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+});
