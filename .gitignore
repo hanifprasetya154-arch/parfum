@@ -1,0 +1,22 @@
+# Node
+node_modules/
+
+# Env
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Firebase config (keep secrets out of repo)
+firebase-config.js
+
+# IDE
+.vscode/
